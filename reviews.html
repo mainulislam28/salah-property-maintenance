@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews | Salah Property Maintenance</title>
+    <link rel="icon" href="images/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo" aria-label="Salah Property Maintenance home">
+                    <img src="images/logo.png" alt="">
+                    <span class="logo-text">
+                        <span class="logo-name">Salah</span>
+                        <span class="logo-tagline">Property Maintenance</span>
+                    </span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="reviews.html" class="active">Reviews</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><button type="button" class="nav-track-btn" data-track-visit>Track visit</button></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Customer Reviews</h1>
+            <p>What our clients say about our services</p>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Our Clients Say</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">Real reviews from satisfied customers across Greater Manchester</p>
+            </div>
+
+            <div class="reviews-summary">
+                <div class="overall-rating">
+                    <div class="rating-score">4.9</div>
+                    <div class="rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="rating-count">Based on 127 reviews</div>
+                </div>
+                <div class="rating-bars">
+                    <div class="rating-bar">
+                        <span class="star-label">5 stars</span>
+                        <div class="bar-container">
+                            <div class="bar-fill" style="width: 85%"></div>
+                        </div>
+                        <span class="bar-count">85%</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span class="star-label">4 stars</span>
+                        <div class="bar-container">
+                            <div class="bar-fill" style="width: 10%"></div>
+                        </div>
+                        <span class="bar-count">10%</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span class="star-label">3 stars</span>
+                        <div class="bar-container">
+                            <div class="bar-fill" style="width: 3%"></div>
+                        </div>
+                        <span class="bar-count">3%</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span class="star-label">2 stars</span>
+                        <div class="bar-container">
+                            <div class="bar-fill" style="width: 1%"></div>
+                        </div>
+                        <span class="bar-count">1%</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span class="star-label">1 star</span>
+                        <div class="bar-container">
+                            <div class="bar-fill" style="width: 1%"></div>
+                        </div>
+                        <span class="bar-count">1%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reviews-grid" id="reviewsGrid">
+                <!-- Reviews will be loaded dynamically from MongoDB -->
+            </div>
+
+            <div class="add-review-section">
+                <h3>Share Your Experience</h3>
+                <p>Help others make informed decisions by leaving a review</p>
+                <button class="btn btn-primary" id="addReviewBtn">Write a Review</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Review Modal -->
+    <div class="modal" id="reviewModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Write a Review</h3>
+                <button class="modal-close" id="closeModal"><i class="fas fa-times"></i></button>
+            </div>
+            <form id="reviewForm">
+                <div class="form-group">
+                    <label for="reviewerName">Your Name *</label>
+                    <input type="text" id="reviewerName" required placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="reviewerEmail">Email Address *</label>
+                    <input type="email" id="reviewerEmail" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="reviewService">Service Used *</label>
+                    <select id="reviewService" required>
+                        <option value="">Select a service</option>
+                        <option value="painting">Painting & Decorating</option>
+                        <option value="plumbing">Plumbing</option>
+                        <option value="tiling">Tiling & Flooring</option>
+                        <option value="carpentry">Carpentry</option>
+                        <option value="repairs">General Repairs</option>
+                        <option value="cleaning">Deep Cleaning</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Rating *</label>
+                    <div class="star-rating" id="starRating">
+                        <i class="far fa-star" data-rating="1"></i>
+                        <i class="far fa-star" data-rating="2"></i>
+                        <i class="far fa-star" data-rating="3"></i>
+                        <i class="far fa-star" data-rating="4"></i>
+                        <i class="far fa-star" data-rating="5"></i>
+                    </div>
+                    <input type="hidden" id="ratingValue" value="0">
+                </div>
+                <div class="form-group">
+                    <label for="reviewText">Your Review *</label>
+                    <textarea id="reviewText" rows="4" required placeholder="Share your experience with our service..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="reviewPhotos">Photos (optional)</label>
+                    <p class="form-hint">Add up to 4 photos of the completed work (JPG, PNG, WEBP — max 5MB each)</p>
+                    <label class="photo-upload-box" for="reviewPhotos">
+                        <i class="fas fa-camera"></i>
+                        <span>Choose photos</span>
+                    </label>
+                    <input type="file" id="reviewPhotos" name="photos" accept="image/jpeg,image/png,image/webp,image/gif" multiple>
+                    <div class="photo-preview-grid" id="photoPreviewGrid"></div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Review</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Experience Our Service?</h2>
+                <p>Join our satisfied customers and let us transform your property</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">Get Free Quote</a>
+                    <a href="services.html" class="btn btn-secondary">Our Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="index.html" class="footer-logo" aria-label="Salah Property Maintenance home">
+                        <img src="images/logo.png" alt="">
+                        <span class="logo-text">
+                            <span class="logo-name">Salah</span>
+                            <span class="logo-tagline">Property Maintenance</span>
+                        </span>
+                    </a>
+                    <p>Premier property maintenance and renovation services in Greater Manchester. Quality workmanship, reliable service, customer satisfaction guaranteed.</p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/salahpropertymaintenance" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/447511688681" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:salahpropertymaintenance@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="services.html">Painting & Decorating</a></li>
+                        <li><a href="services.html">Plumbing</a></li>
+                        <li><a href="services.html">Tiling & Flooring</a></li>
+                        <li><a href="services.html">Carpentry</a></li>
+                        <li><a href="services.html">General Repairs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> 07511688681</li>
+                        <li><i class="fas fa-phone"></i> 07471523012</li>
+                        <li><i class="fas fa-envelope"></i> salahpropertymaintenance@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Greater Manchester, UK</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Salah Property Maintenance. All rights reserved. | Designed with excellence</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

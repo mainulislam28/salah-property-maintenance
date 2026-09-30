@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Reviews | Salah Property Maintenance</title>
+    <link rel="stylesheet" href="admin-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="logo" aria-label="Salah Property Maintenance home">
+                    <img src="images/logo.png" alt="">
+                    <span class="logo-text">
+                        <span class="logo-name">Salah</span>
+                        <span class="logo-tagline">Property Maintenance</span>
+                    </span>
+                </a>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="admin-dashboard.html" class="nav-item">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="admin-visits.html" class="nav-item">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Visits</span>
+                    <span class="badge" id="visitsBadge">0</span>
+                </a>
+                <a href="admin-contacts.html" class="nav-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contacts</span>
+                    <span class="badge" id="contactsBadge">0</span>
+                </a>
+                <a href="admin-reviews.html" class="nav-item active">
+                    <i class="fas fa-star"></i>
+                    <span>Reviews</span>
+                    <span class="badge" id="reviewsBadge">0</span>
+                </a>
+                <a href="index.html" class="nav-item">
+                    <i class="fas fa-globe"></i>
+                    <span>View Website</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <a href="#" class="nav-item logout-btn" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="top-header">
+                <div class="header-left">
+                    <button class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1>Manage Reviews</h1>
+                </div>
+                <div class="header-right">
+                    <div class="user-info">
+                        <div class="user-avatar">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <div class="user-details">
+                            <span class="user-name">Admin</span>
+                            <span class="user-role">Administrator</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="content-wrapper">
+                <!-- Filters -->
+                <div class="filters-bar">
+                    <div class="filter-group">
+                        <label>Status:</label>
+                        <select id="reviewStatusFilter">
+                            <option value="all">All Status</option>
+                            <option value="pending">Pending</option>
+                            <option value="approved">Approved</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Service:</label>
+                        <select id="reviewServiceFilter">
+                            <option value="all">All Services</option>
+                            <option value="painting">Painting & Decorating</option>
+                            <option value="plumbing">Plumbing</option>
+                            <option value="tiling">Tiling & Flooring</option>
+                            <option value="carpentry">Carpentry</option>
+                            <option value="repairs">General Repairs</option>
+                            <option value="cleaning">Deep Cleaning</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Rating:</label>
+                        <select id="ratingFilter">
+                            <option value="all">All Ratings</option>
+                            <option value="5">5 Stars</option>
+                            <option value="4">4 Stars</option>
+                            <option value="3">3 Stars</option>
+                            <option value="2">2 Stars</option>
+                            <option value="1">1 Star</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Search:</label>
+                        <input type="text" id="reviewSearchFilter" placeholder="Search reviews...">
+                    </div>
+                    <button class="btn-refresh" id="refreshReviewsBtn">
+                        <i class="fas fa-sync-alt"></i> Refresh
+                    </button>
+                </div>
+
+                <!-- Reviews Table -->
+                <div class="data-table-container">
+                    <div class="table-header">
+                        <h2>All Reviews</h2>
+                        <div class="table-actions">
+                            <span class="total-count">Total: <span id="totalReviewsCount">0</span></span>
+                        </div>
+                    </div>
+                    
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Reviewer</th>
+                                    <th>Service</th>
+                                    <th>Rating</th>
+                                    <th>Review</th>
+                                    <th>Status</th>
+                                    <th>Date</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="reviewsTableBody">
+                                <tr>
+                                    <td colspan="7" class="no-data">Loading reviews...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Review Detail Modal -->
+                <div class="modal" id="reviewModal">
+                    <div class="modal-content modal-lg">
+                        <div class="modal-header">
+                            <h2>Review Details</h2>
+                            <button class="modal-close" id="closeReviewModal">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div class="modal-body" id="reviewModalBody">
+                            <!-- Review details will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="notification" id="notification"></div>
+
+    <script src="admin-script.js"></script>
+</body>
+</html>

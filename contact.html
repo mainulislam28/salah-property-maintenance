@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Salah Property Maintenance</title>
+    <link rel="icon" href="images/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo" aria-label="Salah Property Maintenance home">
+                    <img src="images/logo.png" alt="">
+                    <span class="logo-text">
+                        <span class="logo-name">Salah</span>
+                        <span class="logo-tagline">Property Maintenance</span>
+                    </span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><button type="button" class="nav-track-btn" data-track-visit>Track visit</button></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Get in touch for a free consultation and quote</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">Ready to transform your property? Contact us today for a free consultation</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Call Us</h3>
+                            <p><a href="tel:07511688681">07511688681</a></p>
+                            <p><a href="tel:07471523012">07471523012</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-search-location"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Track a visit</h3>
+                            <p>Use the phone number from your booking to see the current status</p>
+                            <p><button type="button" class="btn btn-primary" data-track-visit>Track visit</button></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>WhatsApp</h3>
+                            <p><a href="https://wa.me/447511688681" target="_blank">Message Us</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p><a href="mailto:salahpropertymaintenance@gmail.com">salahpropertymaintenance@gmail.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Instagram</h3>
+                            <p><a href="https://www.instagram.com/salahpropertymaintenance" target="_blank">@salahpropertymaintenance</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Working Hours</h3>
+                            <p>Mon - Sat: 8:00 AM - 6:00 PM</p>
+                            <p>Sunday: Emergency Only</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Service Area</h3>
+                            <p>Greater Manchester</p>
+                            <p>And surrounding areas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Request a Free Quote</h3>
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" id="name" placeholder="Your Name *" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="phone" placeholder="Phone Number *" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Email Address">
+                        </div>
+                        <div class="form-group">
+                            <select id="service" required>
+                                <option value="">Select Service *</option>
+                                <option value="painting">Painting & Decorating</option>
+                                <option value="plumbing">Plumbing</option>
+                                <option value="tiling">Tiling & Flooring</option>
+                                <option value="carpentry">Carpentry</option>
+                                <option value="repairs">General Repairs</option>
+                                <option value="cleaning">Deep Cleaning</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" rows="4" placeholder="Tell us about your project... *" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Area Section -->
+    <section class="service-area">
+        <div class="container">
+            <div class="area-content">
+                <i class="fas fa-map-marker-alt"></i>
+                <h2>Proudly Serving Greater Manchester</h2>
+                <p>From Manchester city centre to surrounding areas including Salford, Trafford, Stockport, Oldham, Bolton, Bury, Rochdale, Tameside, and Wigan</p>
+                <div class="area-locations">
+                    <span class="location-tag">Manchester</span>
+                    <span class="location-tag">Salford</span>
+                    <span class="location-tag">Trafford</span>
+                    <span class="location-tag">Stockport</span>
+                    <span class="location-tag">Oldham</span>
+                    <span class="location-tag">Bolton</span>
+                    <span class="location-tag">Bury</span>
+                    <span class="location-tag">Rochdale</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">Quick answers to common questions</p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>How quickly can you respond to inquiries?</h3>
+                    <p>We typically respond within 24 hours. For emergency services, we offer faster response times and can often be on-site the same day.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Do you provide free quotes?</h3>
+                    <p>Yes, we provide free, no-obligation quotes for all our services. Contact us to schedule a consultation.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Are you insured and licensed?</h3>
+                    <p>Yes, we are fully licensed and insured. All our technicians are certified professionals with years of experience.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What areas do you serve?</h3>
+                    <p>We serve Greater Manchester and all surrounding areas including Salford, Trafford, Stockport, Oldham, Bolton, Bury, Rochdale, and more.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Do you offer emergency services?</h3>
+                    <p>Yes, we offer emergency services for urgent plumbing, electrical, and repair issues. Contact us for immediate assistance.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What payment methods do you accept?</h3>
+                    <p>We accept various payment methods including cash, bank transfer, and major credit/debit cards. Payment terms are discussed during quoting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Get Started?</h2>
+                <p>Contact us today and let's discuss your project</p>
+                <div class="cta-buttons">
+                    <a href="tel:07511688681" class="btn btn-primary">
+                        <i class="fas fa-phone"></i> Call Now
+                    </a>
+                    <a href="https://wa.me/447511688681" target="_blank" class="btn btn-secondary">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="index.html" class="footer-logo" aria-label="Salah Property Maintenance home">
+                        <img src="images/logo.png" alt="">
+                        <span class="logo-text">
+                            <span class="logo-name">Salah</span>
+                            <span class="logo-tagline">Property Maintenance</span>
+                        </span>
+                    </a>
+                    <p>Premier property maintenance and renovation services in Greater Manchester. Quality workmanship, reliable service, customer satisfaction guaranteed.</p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/salahpropertymaintenance" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/447511688681" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:salahpropertymaintenance@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="services.html">Painting & Decorating</a></li>
+                        <li><a href="services.html">Plumbing</a></li>
+                        <li><a href="services.html">Tiling & Flooring</a></li>
+                        <li><a href="services.html">Carpentry</a></li>
+                        <li><a href="services.html">General Repairs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> 07511688681</li>
+                        <li><i class="fas fa-phone"></i> 07471523012</li>
+                        <li><i class="fas fa-envelope"></i> salahpropertymaintenance@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Greater Manchester, UK</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Salah Property Maintenance. All rights reserved. | Designed with excellence</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
